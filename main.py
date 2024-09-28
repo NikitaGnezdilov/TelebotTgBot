@@ -133,7 +133,7 @@ def process_password(message):
 def confirm_password(message):
     user_id = message.from_user.id
     if user_password.get(user_id) == message.text:
-        upsert_user(user_id, user_login.get(user_id), user_mail.get(user_id), message.text,'Done', authorization_state.get(user_id),'en')  # Замените 'en' на нужный язык
+        upsert_user(user_id, user_login.get(user_id), user_mail.get(user_id), message.text,'Done', authorization_state.get(user_id),'ru')  # Замените 'en' на нужный язык
         markup = types.InlineKeyboardMarkup()
         btn_auto = types.InlineKeyboardButton("Авторизоваться", callback_data='btn_auto')
         markup.add(btn_auto)
